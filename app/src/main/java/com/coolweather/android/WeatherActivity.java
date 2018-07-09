@@ -21,13 +21,15 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.coolweather.android.gson.Forecast;
-import com.coolweather.android.gson.Suggestion;
 import com.coolweather.android.gson.Weather;
 import com.coolweather.android.service.AutoUpdateService;
 import com.coolweather.android.util.HttpUtil;
 import com.coolweather.android.util.Utility;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -211,7 +213,7 @@ public class WeatherActivity extends AppCompatActivity {
             TextView maxText = (TextView) view.findViewById(R.id.max_text);
             TextView minText = (TextView) view.findViewById(R.id.min_text);
 
-            dateText.setText(forecast.date);
+            dateText.setText(forecast.date + "\n" + getDayOfWeek(forecast.date));
             infoText.setText(forecast.cond.txt);
             maxText.setText(forecast.temp.max);
             minText.setText(forecast.temp.min);
@@ -269,5 +271,26 @@ public class WeatherActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    /**
+     * 返回日期对应星期几。日期格式:yyyy-MM-dd
+     * @param dateStr
+     * @return
+     */
+    private static String getDayOfWeek(String dateStr) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        final String days[] = {"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
+        Calendar calendar = Calendar.getInstance();
+        Date date = null;
+        try {
+            date = format.parse(dateStr);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        calendar.setTime(date);
+        int d = calendar.get(Calendar.DAY_OF_WEEK);
+        return days[d-1];
     }
 }
