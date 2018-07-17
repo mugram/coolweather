@@ -1,4 +1,4 @@
-package com.coolweather.android.gson;
+package com.muhuaweather.android.gson;
 
 /**
  * Created by ywz on 2018/3/9.

@@ -1,4 +1,4 @@
-package com.coolweather.android;
+package com.muhuaweather.android;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,12 +14,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.coolweather.android.db.City;
-import com.coolweather.android.db.County;
-import com.coolweather.android.db.Province;
-import com.coolweather.android.gson.Weather;
-import com.coolweather.android.util.HttpUtil;
-import com.coolweather.android.util.Utility;
+import com.muhuaweather.android.db.City;
+import com.muhuaweather.android.db.County;
+import com.muhuaweather.android.db.Province;
+import com.muhuaweather.android.util.HttpUtil;
+import com.muhuaweather.android.util.Utility;
 
 import org.litepal.crud.DataSupport;
 

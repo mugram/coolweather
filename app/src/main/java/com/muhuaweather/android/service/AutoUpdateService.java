@@ -1,4 +1,4 @@
-package com.coolweather.android.service;
+package com.muhuaweather.android.service;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -8,15 +8,12 @@ import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.support.annotation.IntDef;
 
-import com.bumptech.glide.util.Util;
-import com.coolweather.android.gson.Weather;
-import com.coolweather.android.util.HttpUtil;
-import com.coolweather.android.util.Utility;
+import com.muhuaweather.android.gson.Weather;
+import com.muhuaweather.android.util.HttpUtil;
+import com.muhuaweather.android.util.Utility;
 
 import java.io.IOException;
-import java.util.Calendar;
 
 import okhttp3.Call;
 import okhttp3.Callback;
